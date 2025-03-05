@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\CFGS - DAM\\2do año\\2 Semestre\\M09 - Procesos e hilos\\UF2\\ICB0009-UF2-PR01\\Ejercicio1\\Tarea1\\Tarea1.csproj",
-      "projectName": "Tarea1",
-      "projectPath": "F:\\CFGS - DAM\\2do año\\2 Semestre\\M09 - Procesos e hilos\\UF2\\ICB0009-UF2-PR01\\Ejercicio1\\Tarea1\\Tarea1.csproj",
+      "projectUniqueName": "F:\\CFGS - DAM\\2do año\\2 Semestre\\M09 - Procesos e hilos\\UF2\\ICB0009-UF2-PR01\\Ejercicio1\\Tarea3\\Tarea3.csproj",
+      "projectName": "Tarea3",
+      "projectPath": "F:\\CFGS - DAM\\2do año\\2 Semestre\\M09 - Procesos e hilos\\UF2\\ICB0009-UF2-PR01\\Ejercicio1\\Tarea3\\Tarea3.csproj",
       "packagesPath": "C:\\Users\\ivanl\\.nuget\\packages\\",
-      "outputPath": "F:\\CFGS - DAM\\2do año\\2 Semestre\\M09 - Procesos e hilos\\UF2\\ICB0009-UF2-PR01\\Ejercicio1\\Tarea1\\obj\\",
+      "outputPath": "F:\\CFGS - DAM\\2do año\\2 Semestre\\M09 - Procesos e hilos\\UF2\\ICB0009-UF2-PR01\\Ejercicio1\\Tarea3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ivanl\\AppData\\Roaming\\NuGet\\NuGet.Config"
