@@ -3,7 +3,7 @@ using System.Threading;
 using System.Diagnostics;
 using System.Collections.Concurrent;
 
-namespace _Tarea2
+namespace Tarea2
 {
     class Program
     {   
