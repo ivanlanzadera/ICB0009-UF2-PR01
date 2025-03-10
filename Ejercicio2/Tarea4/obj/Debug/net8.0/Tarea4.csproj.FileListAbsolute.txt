@@ -1,0 +1,15 @@
+F:\CFGS - DAM\2do año\2 Semestre\M09 - Procesos e hilos\UF2\ICB0009-UF2-PR01\Ejercicio2\Tarea4\bin\Debug\net8.0\Tarea4.exe
+F:\CFGS - DAM\2do año\2 Semestre\M09 - Procesos e hilos\UF2\ICB0009-UF2-PR01\Ejercicio2\Tarea4\bin\Debug\net8.0\Tarea4.deps.json
+F:\CFGS - DAM\2do año\2 Semestre\M09 - Procesos e hilos\UF2\ICB0009-UF2-PR01\Ejercicio2\Tarea4\bin\Debug\net8.0\Tarea4.runtimeconfig.json
+F:\CFGS - DAM\2do año\2 Semestre\M09 - Procesos e hilos\UF2\ICB0009-UF2-PR01\Ejercicio2\Tarea4\bin\Debug\net8.0\Tarea4.dll
+F:\CFGS - DAM\2do año\2 Semestre\M09 - Procesos e hilos\UF2\ICB0009-UF2-PR01\Ejercicio2\Tarea4\bin\Debug\net8.0\Tarea4.pdb
+F:\CFGS - DAM\2do año\2 Semestre\M09 - Procesos e hilos\UF2\ICB0009-UF2-PR01\Ejercicio2\Tarea4\obj\Debug\net8.0\Tarea4.GeneratedMSBuildEditorConfig.editorconfig
+F:\CFGS - DAM\2do año\2 Semestre\M09 - Procesos e hilos\UF2\ICB0009-UF2-PR01\Ejercicio2\Tarea4\obj\Debug\net8.0\Tarea4.AssemblyInfoInputs.cache
+F:\CFGS - DAM\2do año\2 Semestre\M09 - Procesos e hilos\UF2\ICB0009-UF2-PR01\Ejercicio2\Tarea4\obj\Debug\net8.0\Tarea4.AssemblyInfo.cs
+F:\CFGS - DAM\2do año\2 Semestre\M09 - Procesos e hilos\UF2\ICB0009-UF2-PR01\Ejercicio2\Tarea4\obj\Debug\net8.0\Tarea4.csproj.CoreCompileInputs.cache
+F:\CFGS - DAM\2do año\2 Semestre\M09 - Procesos e hilos\UF2\ICB0009-UF2-PR01\Ejercicio2\Tarea4\obj\Debug\net8.0\Tarea4.sourcelink.json
+F:\CFGS - DAM\2do año\2 Semestre\M09 - Procesos e hilos\UF2\ICB0009-UF2-PR01\Ejercicio2\Tarea4\obj\Debug\net8.0\Tarea4.dll
+F:\CFGS - DAM\2do año\2 Semestre\M09 - Procesos e hilos\UF2\ICB0009-UF2-PR01\Ejercicio2\Tarea4\obj\Debug\net8.0\refint\Tarea4.dll
+F:\CFGS - DAM\2do año\2 Semestre\M09 - Procesos e hilos\UF2\ICB0009-UF2-PR01\Ejercicio2\Tarea4\obj\Debug\net8.0\Tarea4.pdb
+F:\CFGS - DAM\2do año\2 Semestre\M09 - Procesos e hilos\UF2\ICB0009-UF2-PR01\Ejercicio2\Tarea4\obj\Debug\net8.0\Tarea4.genruntimeconfig.cache
+F:\CFGS - DAM\2do año\2 Semestre\M09 - Procesos e hilos\UF2\ICB0009-UF2-PR01\Ejercicio2\Tarea4\obj\Debug\net8.0\ref\Tarea4.dll
