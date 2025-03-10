@@ -67,7 +67,6 @@ namespace Tarea4
             int numHilo = 1;
             foreach (var hilo in hilosAtencion)
             {
-                // Console.WriteLine($"Esperando a que termine el hilo {hilo.ManagedThreadId}");
                 hilo.Join();
                 Console.WriteLine($"Terminado el hilo {numHilo++}");
             }
