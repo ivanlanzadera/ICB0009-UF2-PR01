@@ -60,6 +60,7 @@ namespace Tarea4
                         Console.WriteLine("Saliendo del bucle de atención.");
                         break;
                     }
+                    Thread.Sleep(200);
                 }
             });
 
