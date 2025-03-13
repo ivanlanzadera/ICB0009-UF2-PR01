@@ -14,18 +14,11 @@ namespace Tarea4
         Finalizado
     }
 
-    public class DatosPaciente
-    {
-        public Paciente paciente {get; set;}
-        public DatosPaciente (Paciente paciente)
-        {
-            this.paciente = paciente;
-        }
-    }
     class Program
-    {   
-        static SemaphoreSlim SemMedicos = new SemaphoreSlim(4);
-        static SemaphoreSlim SemDiagnosis = new SemaphoreSlim(2);
+    {
+        static SemaphoreSlim SemAtencion = new (0);
+        static SemaphoreSlim SemMedicos = new (4);
+        static SemaphoreSlim SemDiagnosis = new (2);
         static ConcurrentQueue<Paciente> ColaPacientes = new ConcurrentQueue<Paciente>();
         static BlockingCollection<Paciente> IntercambioPacientes = new BlockingCollection<Paciente>(ColaPacientes);
         static ConcurrentQueue<int> ColaIds = new ConcurrentQueue<int>();
@@ -37,7 +30,7 @@ namespace Tarea4
         static readonly object locker = new object();
         static bool FinDePrograma = false;
         static int Llegadas = 1;
-        const int PacientesTotales = 10;
+        const int PacientesTotales = 20;
 
         static void Main(string[] args)
         {
@@ -47,28 +40,27 @@ namespace Tarea4
             TGestionLlegadas.Start();
 
             List<Thread> hilosAtencion = new();
-            Task TareaAtenciion = Task.Run(()=>{
+            Task TareaAtencion = Task.Run(()=>{
                 while(true)
                 {
                     if (PacientesN1.Count > 0 || PacientesN2.Count > 0 || PacientesN3.Count > 0)
                     {
                         SemMedicos.Wait();
+                        Paciente paciente = ExtraerPacientePrioritario();
                         Thread TAtenderPaciente = new (AtenderPaciente);
                         hilosAtencion.Add(TAtenderPaciente);
-                        TAtenderPaciente.Start();
+                        TAtenderPaciente.Start(paciente);
                     } else if (FinDePrograma) {
-                        Console.WriteLine("Saliendo del bucle de atención.");
                         break;
                     }
+                    if (!FinDePrograma) SemAtencion.Wait();
                 }
             });
 
-            TareaAtenciion.Wait();
-            int numHilo = 1;
+            TareaAtencion.Wait();
             foreach (var hilo in hilosAtencion)
             {
                 hilo.Join();
-                Console.WriteLine($"Terminado el hilo {numHilo++}");
             }
 
             Console.WriteLine("Todos los pacientes han sido atendidos. Presiona Enter para salir.");
@@ -96,6 +88,7 @@ namespace Tarea4
                         PacientesN3.Add(paciente);
                         break;
                 }
+                SemAtencion.Release();
                 Thread.Sleep(2000);
             }
 
@@ -103,12 +96,13 @@ namespace Tarea4
             {
                 FinDePrograma = true;
             }
+            SemAtencion.Release();
 
         }
 
-        private static void AtenderPaciente ()
+        private static void AtenderPaciente (Object PacienteObjeto)
         {
-            Paciente paciente = ExtraerPacientePrioritario();
+            Paciente paciente = (Paciente)PacienteObjeto;
             OperarEstado(Estado.Consulta, paciente);
 
             Thread.Sleep(paciente.TiempoConsulta*1000);
