@@ -47,7 +47,7 @@ namespace Tarea4
                     {
                         SemMedicos.Wait();
                         Paciente paciente = ExtraerPacientePrioritario();
-                        Thread TAtenderPaciente = new (AtenderPaciente);
+                        Thread TAtenderPaciente = new (AtenderPaciente!);
                         hilosAtencion.Add(TAtenderPaciente);
                         TAtenderPaciente.Start(paciente);
                     } else if (FinDePrograma) {
