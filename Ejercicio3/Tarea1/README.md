@@ -79,7 +79,7 @@ private static void MostrarInformacion (Paciente paciente)
 ## **Tarea 1: ¿Cumple con los requisitos?**
 El programa cumple con los requisitos cuando N ≤ 100. Al superar los 100 pacientes, se generan bloqueos debido a la limitación inicial del rango de IDs. Sin embargo, este problema fue solucionado ampliando el rango de IDs a 1 a 10,000, lo que garantiza unicidad incluso para un número elevado de pacientes.
 
-##**Tarea 2: ¿Qué comportamientos no previstos detectas?**
+## **Tarea 2: ¿Qué comportamientos no previstos detectas?**
 - Se detectó que los IDs no eran únicos para N > 100, lo cual fue corregido.
 - Los outputs no encajaban con un formato claro. Esto fue adaptado para asegurar claridad con un alto volumen de pacientes.
 
