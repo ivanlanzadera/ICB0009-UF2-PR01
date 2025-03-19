@@ -27,7 +27,7 @@ namespace Tarea1
         static readonly object locker = new object();
         static bool FinDePrograma = false;
         static int Llegadas = 1;
-        const int PacientesTotales = 200;
+        const int PacientesTotales = 500;
         static int[] PacientesAtendidos = [0, 0, 0];
         static int[] TiemposEspera = [0, 0, 0];
         static int PacientesDiagnosticados = 0;

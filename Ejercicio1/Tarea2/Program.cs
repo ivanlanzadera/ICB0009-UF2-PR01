@@ -10,6 +10,7 @@ namespace Tarea2
         static SemaphoreSlim SemMedicos = new SemaphoreSlim(4);
         static ConcurrentQueue<Paciente> ColaPacientes = new ConcurrentQueue<Paciente>();
         static BlockingCollection<Paciente> Intercambio = new BlockingCollection<Paciente>(ColaPacientes);
+        static BlockingCollection<int> IntercambioIds = new BlockingCollection<int>();
         static Stopwatch stopwatch = Stopwatch.StartNew();
         static int Llegadas = 1;
 
@@ -36,7 +37,7 @@ namespace Tarea2
             SemMedicos.Wait();
             Console.WriteLine("Ha entrado el {0} paciente", Llegadas);
             int tiempoLlegada = (int)stopwatch.Elapsed.TotalSeconds;
-            Paciente paciente = new Paciente(IdAleatorio(), tiempoLlegada, numAleatorio(), Llegadas++, 1);
+            Paciente paciente = new Paciente(IdAleatorio(), tiempoLlegada, NumAleatorio(), Llegadas++, 1);
             Intercambio.Add(paciente);
             Thread.Sleep(paciente.TiempoConsulta*1000);
             SemMedicos.Release();
@@ -44,7 +45,7 @@ namespace Tarea2
              paciente.Id, paciente.LlegadaHospital, paciente.TiempoConsulta, paciente.NumeroLlegada, paciente.Prioridad);
         }
 
-        private static int numAleatorio()
+        private static int NumAleatorio()
         {
             Random rnd = new Random();
             return rnd.Next(5,16);
@@ -58,11 +59,12 @@ namespace Tarea2
             while(!disponible)
             {
                 disponible = true;
-                id = rnd.Next(1, 101);
-                Parallel.ForEach (Intercambio, paciente => {
-                    if (paciente.Id == id) disponible = false;
+                id = rnd.Next(1, 5);
+                Parallel.ForEach (IntercambioIds, Identificador => {
+                    if (Identificador == id) disponible = false;
                 });
             }
+            IntercambioIds.Add(id);
             return id;
         }
     

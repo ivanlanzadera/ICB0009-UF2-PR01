@@ -18,6 +18,7 @@ namespace Tarea1
         static SemaphoreSlim SemDiagnosis = new SemaphoreSlim(2);
         static ConcurrentQueue<Paciente> ColaPacientes = new ConcurrentQueue<Paciente>();
         static BlockingCollection<Paciente> Intercambio = new BlockingCollection<Paciente>(ColaPacientes);
+        static BlockingCollection<int> IntercambioIds = new BlockingCollection<int>();
         static Stopwatch MainStopwatch = Stopwatch.StartNew();
         static int Llegadas = 1;
 
@@ -101,11 +102,12 @@ namespace Tarea1
             while(!disponible)
             {
                 disponible = true;
-                id = rnd.Next(1, 101);
-                Parallel.ForEach (Intercambio, paciente => {
-                    if (paciente.Id == id) disponible = false;
+                id = rnd.Next(1, 5);
+                Parallel.ForEach (IntercambioIds, Identificador => {
+                    if (Identificador == id) disponible = false;
                 });
             }
+            IntercambioIds.Add(id);
             return id;
         }
     

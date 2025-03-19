@@ -22,6 +22,17 @@ El código demuestra cómo gestionar **procesos concurrentes** mediante la clase
 
 ---
 
+## **Métodos y clases que implementa este proyecto**
+1. **Clase `LlegadaPaciente`**
+   - Cuando un hilo inicia este método hace un `Wait` sobre el semáforo de médicos (4).
+   - Una vez el semáforo le asigne su turno, se genera un número de paciente en funcion de su llegada.
+   - Se notifica por consola que el paciente ha llegado a la consulta.
+   - Se utiliza un `Thread.Sleep(10000)` para pausar el hilo 10 segundos.
+   - Se ejecuta un `Release` sobre el semáforo.
+   - Se notifica por consola que el paciente ha salido la consulta.
+
+---
+
 ## **Preguntas y Respuestas**
 
 1. **¿Cuántos hilos se están ejecutando en este programa? Explica tu respuesta.**
@@ -41,22 +52,13 @@ El código demuestra cómo gestionar **procesos concurrentes** mediante la clase
 
 ---
 
-## **Diagrama del Flujo de Procesos**
-El siguiente esquema ilustra cómo funcionan los hilos y el semáforo:
-
-
-
-**Nota:** El semáforo (`SemaphoreSlim`) asegura que cada paciente ocupa una consulta disponible y que no haya más de 4 pacientes atendidos simultáneamente.
-
----
-
 ## **Capturas de Pantalla**
 ### **Ejecución del Programa**
 ![](e1-t1-output.png)
 
 ---
 
-## **Esquemas Adicionales**
+## **Diagrama de flujo**
 ![](e1-t1-esquema.png)
 
 ---

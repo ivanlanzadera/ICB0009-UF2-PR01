@@ -3,13 +3,14 @@ using System.Threading;
 using System.Diagnostics;
 using System.Collections.Concurrent;
 
-namespace _Tarea3
+namespace Tarea3
 {
     class Program
     {   
         static SemaphoreSlim SemMedicos = new SemaphoreSlim(4);
         static ConcurrentQueue<Paciente> ColaPacientes = new ConcurrentQueue<Paciente>();
         static BlockingCollection<Paciente> Intercambio = new BlockingCollection<Paciente>(ColaPacientes);
+        static BlockingCollection<int> IntercambioIds = new BlockingCollection<int>();
         static Stopwatch MainStopwatch = Stopwatch.StartNew();
         static int Llegadas = 1;
         public static string[] estados = ["Espera", "Consulta", "Finalizado"];
@@ -75,11 +76,12 @@ namespace _Tarea3
             while(!disponible)
             {
                 disponible = true;
-                id = rnd.Next(1, 101);
-                Parallel.ForEach (Intercambio, paciente => {
-                    if (paciente.Id == id) disponible = false;
+                id = rnd.Next(1, 5);
+                Parallel.ForEach (IntercambioIds, Identificador => {
+                    if (Identificador == id) disponible = false;
                 });
             }
+            IntercambioIds.Add(id);
             return id;
         }
     
